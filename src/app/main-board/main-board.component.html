@@ -2,7 +2,7 @@
     @for(card of cardDeck; track card){
 
     <div class="card" (click)="onCardClick(card)"
-        [ngClass]="{'toggle-stay' : card.isClicked, 'toggle-matched' : card.isMatched}">
+        [ngClass]="{'toggle-stay' : card.isClicked, 'toggle-matched' : (card.isMatched || isHoldingTwoCards) }">
         <div class="card--front"><img src="/hidden.jpg" />
         </div>
         <div class="card--back">

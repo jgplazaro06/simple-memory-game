@@ -21,6 +21,7 @@ export class MainBoardComponent implements OnInit, AfterViewInit {
 
   cardOne: CardModel = { value: 0, isClicked: false, isMatched: false };
   isHoldingACard: boolean = false;
+  isHoldingTwoCards: boolean = false;
   // private cardOne: CardModel = new CardModel();
   // private cardTwo: CardModel;
 
@@ -59,7 +60,6 @@ export class MainBoardComponent implements OnInit, AfterViewInit {
   }
 
   onCardClick(card: CardModel) {
-
     if (this.isHoldingACard === false) {
       card.isClicked = true;
       this.cardOne = card;
@@ -69,8 +69,8 @@ export class MainBoardComponent implements OnInit, AfterViewInit {
 
     if (this.cardOne === card) return;
 
-
     this.mainBoardService.addAttempts();
+    this.isHoldingTwoCards = true;
     this.isHoldingACard = false;
 
     if (card.value === this.cardOne.value) {
@@ -79,11 +79,14 @@ export class MainBoardComponent implements OnInit, AfterViewInit {
       this.cardOne.isMatched = true;
       this.cardOne.isMatched = true;
       this.mainBoardService.addToCurrentMatchSuccess();
+      this.isHoldingTwoCards = false;
     } else {
+     
       card.isClicked = true;
       setTimeout(() => {
         card.isClicked = false;
         this.cardOne.isClicked = false;
+        this.isHoldingTwoCards = false;
       }, 1000);
     }
 
