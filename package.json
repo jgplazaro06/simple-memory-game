@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:memory-game": "node dist/memory-game/server/server.mjs"
+    "serve:ssr:memory-game": "node dist/memory-game/server/server.mjs",
+    "heroku-postbuild": "ng build"
   },
   "private": true,
   "dependencies": {
