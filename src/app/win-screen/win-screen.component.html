@@ -1,0 +1,13 @@
+@if(mainBoardService.winConditionMet$ | async){
+
+<div class="winscreen--container">
+    <div class="block--container">
+        <h1>Congratulations!</h1>
+
+        <p>Attempts: {{mainBoardService.attemptsCount$ | async}}</p>
+
+        <button (click)="onClickRestart()">New Game?</button>
+    </div>
+</div>
+
+}

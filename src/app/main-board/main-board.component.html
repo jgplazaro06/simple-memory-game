@@ -1,0 +1,22 @@
+<div class="card-grid">
+    @for(card of cardDeck; track card){
+
+    <div class="card" (click)="onCardClick(card)"
+        [ngClass]="{'toggle-stay' : card.isClicked, 'toggle-matched' : card.isMatched}">
+        <div class="card--front"><img src="/hidden.jpg" />
+        </div>
+        <div class="card--back">
+            <p>{{card.value}}</p>
+        </div>
+    </div>
+    }
+</div>
+
+<!-- <div class="card" (click)="onCardClick($event)" onclick="this.classList.toggle('toggle-stay')">
+    <div class="card--face">
+        <img src="/hidden.jpg" />
+    </div>
+    <div class="card--back">
+        <p>1</p>
+    </div>
+</div> -->

@@ -1,0 +1,10 @@
+main {
+  position: relative;
+}
+
+app-main-board {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}

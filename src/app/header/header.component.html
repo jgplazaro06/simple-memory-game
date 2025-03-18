@@ -1,0 +1,9 @@
+<div class="block--header">
+    <nav class="main--header">
+        <h1>MemoryGame</h1>
+        <div class="edge--div">
+            <button (click)="onClickRestart()">New Game?</button>
+            <p>Attempts: {{mainBoardService.attemptsCount$ | async}}</p>
+        </div>
+    </nav>
+</div>

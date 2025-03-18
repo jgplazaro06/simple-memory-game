@@ -1,0 +1,19 @@
+.winscreen--container {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    color: white;
+    background: black;
+    opacity: 1;
+    z-index: 9999;
+  }
+  
+  .block--container{
+      margin: auto;
+  }
+  
