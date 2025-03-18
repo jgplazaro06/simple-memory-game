@@ -13,6 +13,7 @@ import { WinScreenComponent } from './win-screen/win-screen.component';
 import { DeckInitComponent } from './deck-init/deck-init.component';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule } from '@angular/forms';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
-  providers: [provideClientHydration(withEventReplay())],
+  providers: [provideClientHydration(withEventReplay()), {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
